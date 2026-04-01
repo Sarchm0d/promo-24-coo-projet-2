@@ -2,10 +2,12 @@ package duckcorp;
 
 import duckcorp.duck.Duck;
 import duckcorp.factory.Factory;
+import duckcorp.machine.LuxuryMold;
 import duckcorp.machine.Machine;
+import duckcorp.machine.MiniPress;
+import duckcorp.machine.StandardPress;
 import duckcorp.order.Order;
 import duckcorp.order.OrderStatus;
-
 import java.util.ArrayList;
 import java.util.List;
 

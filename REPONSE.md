@@ -13,3 +13,5 @@ Stock<MiniDuck> miniStock = new Stock<>();
 order.canBeFulfilled(miniStock); 
 
 
+## Question Ex5
+On retourne une liste non modifiable pour éviter que l’extérieur modifie la liste interne des machines. Sinon, un code externe pourrait ajouter/supprimer des machines sans contrôle. On peut modifier les machines elles-mêmes via leurs méthodes, mais pas la liste.
