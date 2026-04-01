@@ -1,12 +1,12 @@
 package duckcorp.duck;
 
-/**
- * Interface représentant un objet dont on peut évaluer la qualité.
- *
- * TODO (Ex1) :
- *   - Implémentez isDefective() et getQualityLabel() (méthodes default)
- * @author Roussille Philippe <roussille@3il.fr>
- */
+ /**
+  * Interface représentant un objet dont on peut évaluer la qualité.
+  *
+  * TODO (Ex1) :
+  *   - Implémentez isDefective() et getQualityLabel() (méthodes default)
+  * @author Roussille Philippe <roussille@3il.fr>
+  */
 public interface Qualifiable {
 
     /** Retourne le score de qualité (entre 0 et 100). */
@@ -17,7 +17,7 @@ public interface Qualifiable {
      * TODO : implémentez cette méthode default en vous appuyant sur getQualityScore().
      */
     default boolean isDefective() {
-        throw new UnsupportedOperationException("TODO : Qualifiable.isDefective()");
+        return getQualityScore() < 20;
     }
 
     /**
@@ -26,6 +26,17 @@ public interface Qualifiable {
      * TODO : implémentez cette méthode default.
      */
     default String getQualityLabel() {
-        throw new UnsupportedOperationException("TODO : Qualifiable.getQualityLabel()");
+        int score = getQualityScore();
+        if (score >= 80) {
+            return "Excellent";
+        }
+        if (score >= 50) {
+            return "Bon";
+        }
+        if (score >= 20) {
+            return "Médiocre";
+        }
+        return "Défectueux";
     }
 }
+
