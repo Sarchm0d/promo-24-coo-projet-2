@@ -121,6 +121,11 @@ public class Game {
      *   1 -> StandardPress  /  2 -> MiniPress  /  3 -> LuxuryMold
      */
     private Machine createMachine(int choice) {
-        throw new UnsupportedOperationException("TODO : Game.createMachine()");
+        return switch (choice) {
+            case 1 -> new StandardPress();
+            case 2 -> new MiniPress();
+            case 3 -> new LuxuryMold();
+            default -> null;
+        };
     }
 }
