@@ -67,8 +67,7 @@ public class Order {
      * Retourne la valeur totale de la commande (pricePerUnit * quantity).
      */
     public double getTotalValue() {
-        // TODO
-        throw new UnsupportedOperationException("TODO : Order.getTotalValue()");
+        return pricePerUnit * quantity;
     }
 
     /**
@@ -79,8 +78,7 @@ public class Order {
      * dont le type générique étend Duck, pas seulement Stock<Duck>.
      */
     public boolean canBeFulfilled(Stock<? extends Duck> stock) {
-        // TODO
-        throw new UnsupportedOperationException("TODO : Order.canBeFulfilled()");
+        return stock.count(duckType) >= quantity;
     }
 
     /**
@@ -88,8 +86,7 @@ public class Order {
      * Appelée par Factory.fulfillOrder() après retrait du stock.
      */
     public void fulfill() {
-        // TODO
-        throw new UnsupportedOperationException("TODO : Order.fulfill()");
+        status = OrderStatus.FULFILLED;
     }
 
     /**
@@ -97,8 +94,10 @@ public class Order {
      */
     @Override
     public boolean equals(Object o) {
-        // TODO
-        throw new UnsupportedOperationException("TODO : Order.equals()");
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return id.equals(order.id);
     }
 
     /**
@@ -106,8 +105,7 @@ public class Order {
      */
     @Override
     public int hashCode() {
-        // TODO
-        throw new UnsupportedOperationException("TODO : Order.hashCode()");
+        return id.hashCode();
     }
 
     // --- toString fourni ---
